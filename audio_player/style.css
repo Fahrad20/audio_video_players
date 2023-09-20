@@ -1,0 +1,192 @@
+*, ::after, ::before { padding: 0; margin: 0; box-sizing: border-box; }
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.35) url(img/back.jpg) no-repeat center/cover; 
+    background-blend-mode: color;
+}
+.audio_player {
+    width: 400px;
+    border: 3px solid rgba(0, 0, 0, 0.24);
+    background: #333;
+    text-align: center;
+    padding: 30px 10px;
+    opacity: .95;
+}
+.audio_player img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.audio_player h1 {
+    margin-top: 20px;
+    color: #bfbfbf;
+    font-family: cursive;
+}
+.audio_player h2 {
+    margin-top: 5px;
+    color: #969696;
+    font-family: cursive;
+    text-shadow: 0 0 5px #151515;
+}
+.audio_player .time .full_time {
+    appearance: none;
+    width: 80%;
+    height: 7px;
+    background: #bcbcbc;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    outline: 0;
+}
+.audio_player .time .full_time::-webkit-slider-thumb {
+    appearance: none;
+    width: 8px;
+    height: 8px;
+    background: #253eff;
+    border-radius: 50%;
+    box-shadow: -12em 0 0 12em #1731ff;
+}
+.audio_player .controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+    align-items: center;
+}
+.audio_player .controls .play,
+.audio_player .controls .pause,
+.audio_player .controls .stop {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+.audio_player .controls .play::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 21px solid #253eff;
+}
+.audio_player .controls .pause::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background: linear-gradient(to right, #253eff 0 40%, transparent 40% 60%, #253eff 60% 100%);
+}
+.audio_player .controls .stop::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25px;
+    height: 25px;
+    background: #253eff;
+}
+.audio_player .controls .prev,
+.audio_player .controls .next {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: .5s;
+}
+.audio_player .controls .prev::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 14px solid #253eff;
+}
+.audio_player .controls .prev::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 14px solid #253eff;
+}
+.audio_player .controls .next::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 14px solid #253eff;
+}
+.audio_player .controls .next::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 14px solid #253eff;
+}
+.audio_player .controls *:hover {
+    transform: scale(1.06);
+    background: #272727;
+}
+.audio_player .volume input {
+    appearance: none;
+    height: 7px;
+    border-radius: 5px;
+    background: #bcbcbc;
+    overflow: hidden;
+    outline: 0;
+    cursor: pointer;
+}
+.audio_player .volume input::-webkit-slider-thumb {
+    appearance: none;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #253eff;
+    box-shadow: -7em 0 0 7em #253eff;
+}
+@keyframes anim {
+    0% {
+        box-shadow: 0 0 15px #fff;
+    }
+    100% {
+        box-shadow: 0 0 30px #fff;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Audio Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="audio_player">
+       <audio src="audio/track_1.mp3" type="audio/mpeg" autoplay></audio>
+        <img src="img/1.jpg" alt="Img">
+        <h1>Miyagi & Andy Panda</h1>
+        <h2>Темнота</h2>
+        <div class="time">
+            <input class="full_time" type="range" min="0" max="100" value="0" step="1">
+        </div>
+        <div class="controls">
+            <div class="prev"></div>
+            <div class="stop"></div>
+            <div class="play"></div>
+            <div class="pause"></div>
+            <div class="next"></div>
+        </div>
+        <div class="volume">
+            <input type="range" min="0" max="100" value="100" step="1">
+        </div>
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

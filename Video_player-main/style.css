@@ -1,0 +1,490 @@
+*, ::after, ::before { margin: 0; padding: 0; box-sizing: border-box; }
+
+.videoPlayer {
+    position: relative;
+    height: 605px;
+    overflow: hidden;
+}
+.videoPlayer .context_menu {
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    width: 145px;
+    background: rgba(0, 0, 0, .9);
+    text-align: center;
+    padding: 15px;
+    color: #fff;
+    border: 6px double rgba(255, 255, 255, .7);
+    box-sizing: content-box;
+    transition: .3s;
+    opacity: 0;
+    z-index: 10;
+}
+.videoPlayer .context_menu h2 {
+    font-size: 16px;
+    font-family: cursive;
+    margin-bottom: 25px;
+}
+.videoPlayer video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .8s;
+}
+.videoPlayer .controls_show {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 34px;
+    height: 31px;
+    z-index: 12;
+    transition: 2s;
+    visibility: hidden;
+    opacity: 0;
+}
+.videoPlayer .controls_show button {
+    background: none;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}
+.videoPlayer .controls_show button i {
+    color: #fff;
+    font-size: 26px;
+    opacity: .1;
+    transition: .8s;
+}
+.videoPlayer .controls_show button:hover i {
+    opacity: .5;
+    transform: scale(105%);
+}
+.videoPlayer .controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgb(0, 0, 0, .7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 11;
+    transition: 1s;
+}
+.videoPlayer .controls_hide {
+    width: 34px;
+    height: 31px;
+}
+.videoPlayer .controls_hide button {
+    background: none;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+}
+.videoPlayer .controls_hide button i {
+    color: #fff;
+    font-size: 33px;
+    opacity: .4;
+}
+.videoPlayer .controls_hide button:hover i {
+    opacity: .6;
+}
+.videoPlayer .controls .playPouseStop {
+    display: flex;
+    width: 19%;
+}
+.videoPlayer .controls .playPouseStop .play,
+.videoPlayer .controls .playPouseStop .stop,
+.videoPlayer .controls .playPouseStop .pause {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 10px;
+}
+.videoPlayer .controls .playPouseStop .play::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 20px;
+    border-top: 17px solid transparent;
+    border-bottom: 17px solid transparent;
+    border-left: 22px solid #fff;
+}
+.videoPlayer .controls .playPouseStop .stop::after {
+    content: '';
+    position: absolute;
+    top: 13px;
+    left: 14px;
+    width: 28px;
+    height: 27px;
+    background: #fff;
+}
+.videoPlayer .controls .playPouseStop .pause::before {
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 16px;
+    width: 8px;
+    height: 31px;
+    background: #fff;
+}
+.videoPlayer .controls .playPouseStop .pause::after {
+    content: '';
+    position: absolute;
+    top: 11px;
+    right: 16px;
+    width: 8px;
+    height: 31px;
+    background: #fff;
+}
+.videoPlayer .controls .playPouseStop *:hover {
+    opacity: .6;
+}
+.videoPlayer .controls .volumeBlock {
+    display: flex;
+    align-items: center;
+    width: 18%;
+}
+.videoPlayer .controls .volumeBlock input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 130px;
+    height: 30px;
+    background: #47484B;
+    overflow: hidden;
+    cursor: pointer;
+    outline: 0;
+}
+.videoPlayer .controls .volumeBlock *:hover {
+    opacity: .8;
+}
+.videoPlayer .controls .volumeBlock input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: -10em 0 0 10em #fff;
+    width: 0;
+    height: 0;
+}
+.videoPlayer .controls .volumeBlock input::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    box-shadow: -10em 0 0 10em #fff;
+    width: 0;
+    height: 0;
+    border: 0;
+}
+.videoPlayer .controls .volumeBlock button {
+    background: none;
+    border: none;
+    outline: 0;
+    color: #fff;
+    font-size: 30px;
+    margin: 1px 10px 0 0;
+    cursor: pointer;
+    width: 32px;
+    text-align: left;
+}
+.videoPlayer .controls .volumeBlock span {
+    color: #fff;
+    font-family: cursive;
+    font-size: 23px;
+    margin-left: 20px;
+    width: 40px;
+    cursor: default;
+}
+.videoPlayer .controls .theme button {
+    outline: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+.videoPlayer .controls .theme button svg {
+    fill: #fff;
+    width: 65px;
+    height: 37px;
+}
+.videoPlayer .controls .theme button:hover {
+    opacity: .8;
+}
+.videoPlayer .controls .timeBlock {
+    width: 12%;
+    cursor: default;
+}
+.videoPlayer .controls .timeBlock span {
+    color: #fff;
+    font-size: 22px;
+    font-family: cursive;
+}
+.videoPlayer .controls .fullTime {
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+} 
+.videoPlayer .controls .fullTime input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(34, 34, 34) 0%);
+    cursor: pointer;
+}
+.videoPlayer .controls .fullTime input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 13px;
+    border-radius: 50%;
+    background: transparent;
+    transition: .3s;
+}
+.videoPlayer .controls .fullTime input::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0;
+    height: 13px;
+    border-radius: 50%;
+    background: transparent;
+    transition: .3s;
+    border: 0;
+}
+.videoPlayer .controls .fullTime input.active::-webkit-slider-thumb,
+.videoPlayer .controls .fullTime input.active::-moz-range-thumb {
+    background: red;
+    width: 13px;
+}
+.videoPlayer .controls .speedBlock {
+    position: relative;
+}
+.videoPlayer .controls .speedBlock span {
+    font-size: 22px;
+    color: #fff;
+    font-family: cursive;
+    cursor: pointer;
+}
+.videoPlayer .controls .speedBlock span:hover {
+    opacity: .8;
+}
+.videoPlayer .controls .speedBlock .playBackRate {
+    position: absolute;
+    top: -185px;
+    left: -25px;
+    width: 120px;
+    background: rgba(0, 0, 0, .8);
+    padding: 0 2px;
+    border: 1px solid #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: .5s;
+    z-index: 6;
+}
+.videoPlayer .controls .speedBlock .playBackRate button {
+    outline: 0;
+    border: 1px solid #fff;
+    padding: 4px;
+    font-size: 16px;
+    font-family: cursive;
+    color: #fff;
+    background: #222;
+    margin: 2px 0;
+    cursor: pointer;
+    width: 100%;
+    transition: .5s;
+}
+.videoPlayer .controls .speedBlock .playBackRate button:hover {
+    background: #111;
+}
+.videoPlayer .filters {
+    position: absolute;
+    top: 50%;
+    left: -80px;
+    z-index: 12;
+    transform: translateY(-100%);
+    transition: 1s;
+}
+.videoPlayer .filters button {
+    outline: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: block;
+    border: 0;
+    margin: 12px 0 12px 15px;
+    cursor: pointer;
+}
+.videoPlayer .filters button:hover {
+    opacity: .8;
+    outline: 1.5px solid rgba(255, 255, 255, 0.51);
+}
+.videoPlayer .filters button:nth-of-type(1) {
+    background: linear-gradient(to right, orange , yellow, green, blue);
+}
+.videoPlayer .filters button:nth-of-type(2) {
+    background: gray;
+}
+.videoPlayer .filters button:nth-of-type(3) {
+    background: green;
+}
+.videoPlayer .filters button:nth-of-type(4) {
+    background: #F0EAD6;
+}
+.videoPlayer .filters button:nth-of-type(5) {
+    background: red;
+}
+.videoPlayer .filters button:nth-of-type(6) {
+    background: #EEDD87;
+}
+.videoPlayer .filters button:nth-of-type(7) {
+    background: none;
+    color: #fff;
+    font-size: 25px;
+    font-family: cursive;
+}
+.videoPlayer .filters button:nth-of-type(7):hover {
+    outline: 0;
+}
+.videoPlayer .minus10 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 495px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.videoPlayer .plus10 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+    height: 495px;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.videoPlayer .minus10 .symbol,
+.videoPlayer .plus10 .symbol {
+    display: flex;
+    opacity: 0;
+    transition: .4s;
+}
+.videoPlayer .minus10 .symbol span {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 12px solid #fff;
+    animation: nextprev .6s linear calc(var(--i) * .4s) infinite;
+}
+.videoPlayer .plus10 .symbol span {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 12px solid #fff;
+    animation: nextprev .6s linear calc(var(--i) * .4s) infinite;
+}
+.videoPlayer .controls .fullScreen label {
+    display: block;
+}
+.videoPlayer .controls .fullScreen input {
+    position: absolute;
+    left: -2000em;
+    visibility: hidden;
+    opacity: 0;
+}
+.videoPlayer .controls .fullScreen i {
+    color: #fff;
+    font-size: 25px;
+    cursor: pointer;
+}
+.videoPlayer .controls .fullScreen:hover i {
+    opacity: .8;
+}
+.videoPlayer .controls .fullScreen i:nth-of-type(2) {
+    display: none;
+}
+.videoPlayer .controls .playlist_menu button {
+    outline: 0;
+    border: 0;
+    background: none;
+    color: #fff;
+    font-size: 38px;
+    cursor: pointer;
+    height: 38px;
+    transition: .6s;
+}
+.videoPlayer .controls .playlist_menu button:hover {
+    opacity: .8;
+    transform: scale(105%);
+}
+.videoPlayer .playList {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 83%;
+    width: 40%;
+    background: rgba(0, 0, 0, .8);
+    overflow: auto;
+    z-index: 10;
+    border-left: 2px dashed #444;
+    transition: .5s;
+}
+.videoPlayer .playList .item {
+    display: flex;
+    border-bottom: 2px dashed #444;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.videoPlayer .playList .item:hover {
+    background: #222;
+}
+.videoPlayer .playList .item video {
+    width: 170px;
+    height: 110px;
+    border: 1px solid #888888d4;
+}
+.videoPlayer .playList .item .descr {
+    padding-left: 25px;
+}
+.videoPlayer .playList .item h2 {
+    font-size: 22px;
+    font-family: cursive;
+    color: #fff;
+}
+.videoPlayer .playList .item p {
+    font-size: 14px;
+    font-family: cursive;
+    color: #fff;
+}
+.videoPlayer .playList::-webkit-scrollbar {
+    width: 7px;    
+}
+.videoPlayer .playList::-webkit-scrollbar-track {
+    background: #232323;
+}
+.videoPlayer .playList::-webkit-scrollbar-thumb {
+    background: #bfbfbf;
+    border-radius: 15px;
+}
+
+
+
+@keyframes nextprev {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+

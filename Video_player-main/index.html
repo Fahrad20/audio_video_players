@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="videoPlayer">
+      <div class="context_menu">
+        <h2>Video Player Version 10</h2>
+        <h3>Developer</h3>
+        <h3>Fahrad Levonyan</h3>
+      </div>
+      <div class="controls_show">
+        <button><i class="fa fa-eye"></i></button>
+      </div>
+      <video src="video/6.mp4" type="video/mp4"></video>
+      <div class="playList">
+        <div class="item">
+          <video src="video/6.mp4" type="video/mp4"></video>
+          <div class="descr">
+            <h2>Billie Eilish - Happier than ever</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+              nulla mollitia explicabo numquam perferendis ex ullam ea, beatae!.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <video src="video/6.mp4" type="video/mp4"></video>
+          <div class="descr">
+            <h2>Hayko - Verev</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+              nulla mollitia explicabo numquam perferendis ex ullam ea, beatae!.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <video src="video/6.mp4" type="video/mp4"></video>
+          <div class="descr">
+            <h2>Hayko - Amena</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+              nulla mollitia explicabo numquam perferendis ex ullam ea, beatae!.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <video src="video/6.mp4" type="video/mp4"></video>
+          <div class="descr">
+            <h2>Ara Martirosyan - Bajanum</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+              nulla mollitia explicabo numquam perferendis ex ullam ea, beatae!.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <video src="video/6.mp4" type="video/mp4"></video>
+          <div class="descr">
+            <h2>Mi Qani Hogi - Es Pahin</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+              nulla mollitia explicabo numquam perferendis ex ullam ea, beatae!.
+            </p>
+          </div>
+        </div>
+        <div class="item">
+          <video src="video/6.mp4" type="video/mp4"></video>
+          <div class="descr">
+            <h2>Billie Eilish, Khalid - lovely</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+              nulla mollitia explicabo numquam perferendis ex ullam ea, beatae!.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="minus10">
+        <div class="symbol">
+          <span style="--i: 3"></span>
+          <span style="--i: 2"></span>
+          <span style="--i: 1"></span>
+        </div>
+      </div>
+      <div class="plus10">
+        <div class="symbol">
+          <span style="--i: 1"></span>
+          <span style="--i: 2"></span>
+          <span style="--i: 3"></span>
+        </div>
+      </div>
+      <div class="controls">
+        <div class="fullTime">
+          <input type="range" min="0" max="100" value="0" step="1" />
+        </div>
+        <div class="playlist_menu">
+          <button><i class="fa fa-list"></i></button>
+        </div>
+        <div class="volumeBlock">
+          <button><i class="fa fa-volume-up"></i></button>
+          <input type="range" min="0" max="100" value="100" step="1" />
+          <span>100</span>
+        </div>
+        <div class="theme">
+          <button>
+            <svg viewBox="0 0 512 512">
+              <path
+                d="M204.3 5C104.9 24.4 24.8 104.3 5.2 203.4c-37 187 131.7 326.4 258.8 306.7 41.2-6.4 61.4-54.6 42.5-91.7-23.1-45.4 9.9-98.4 60.9-98.4h79.7c35.8 0 64.8-29.6 64.9-65.3C511.5 97.1 368.1-26.9 204.3 5zM96 320c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm32-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128-64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm128 64c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div class="playPouseStop">
+          <div class="stop"></div>
+          <div class="play"></div>
+          <div class="pause"></div>
+        </div>
+        <div class="controls_hide">
+          <button><i class="fa fa-eye-slash"></i></button>
+        </div>
+        <div class="timeBlock">
+          <span class="current">00:00 </span>
+          <span class="duration">/ 03:17</span>
+        </div>
+        <div class="speedBlock">
+          <span>SPEED</span>
+          <div class="playBackRate">
+            <button onclick="videoFunction.playBackSpeed(5)">x5.0</button>
+            <button onclick="videoFunction.playBackSpeed(2)">x2.0</button>
+            <button onclick="videoFunction.playBackSpeed(1)">Normal</button>
+            <button onclick="videoFunction.playBackSpeed(0.5)">x0.5</button>
+            <button onclick="videoFunction.playBackSpeed(0.25)">x0.25</button>
+          </div>
+        </div>
+        <div class="fullScreen">
+          <label>
+            <input type="checkbox" />
+            <i class="fa fa-expand"></i>
+            <i class="fa fa-compress"></i>
+          </label>
+        </div>
+      </div>
+      <div class="filters">
+        <button onclick="videoFunction.themes('hue-rotate(150deg)')"></button>
+        <button onclick="videoFunction.themes('grayscale(1)')"></button>
+        <button onclick="videoFunction.themes('hue-rotate(250deg)')"></button>
+        <button onclick="videoFunction.themes('invert(1)')"></button>
+        <button onclick="videoFunction.themes('saturate(2.5)')"></button>
+        <button onclick="videoFunction.themes('sepia(90%)')"></button>
+        <button onclick="videoFunction.themes('none')">
+          <i class="fa fa-ban"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
