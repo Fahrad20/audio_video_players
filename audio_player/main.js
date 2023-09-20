@@ -36,7 +36,7 @@ const audioFunction = {
         audioFullTime.value = audioPlayer.currentTime * 100 / audioPlayer.duration;
         if (audioPlayer.currentTime > 0) {
             audioImage.style.animation = 'anim .3s linear infinite';
-        }else {
+        } else {
             audioImage.style.animationPlayState = 'paused';
         }
     },

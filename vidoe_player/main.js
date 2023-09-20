@@ -44,18 +44,18 @@ const videoFunction = {
     volume() {
         videoPlayer.volume = videoVolume.value / 100;
         videoVolumeValue.innerText = videoVolume.value;
-        if(videoVolume.value == 0) {
+        if (videoVolume.value == 0) {
             videoVolumeMuted.innerHTML = '<i class="fa fa-volume-off"></i>';
             videoVolumeMuted.style.transform = 'translateX(15px)';
             videoVolumeMuted.style.transition = '.8s';
-        }else {
+        } else {
             videoVolumeMuted.innerHTML = '<i class="fa fa-volume-up"></i>';
             videoVolumeMuted.style.transform = 'translateX(0)';
             videoVolumeMuted.style.transition = '.2s';
         }
     },
     muted() {
-        if(videoPlayer.muted) {
+        if (videoPlayer.muted) {
             videoPlayer.muted = false;
             videoPlayer.volume = 1;
             videoVolumeMuted.innerHTML = '<i class="fa fa-volume-up"></i>';
@@ -63,7 +63,7 @@ const videoFunction = {
             videoVolumeMuted.style.transition = '.2s';
             videoVolume.value = 100;
             videoVolumeValue.innerText = '100';
-        }else {
+        } else {
             videoPlayer.muted = true;
             videoPlayer.volume = 0;
             videoVolumeMuted.innerHTML = '<i class="fa fa-volume-off"></i>';
@@ -71,17 +71,17 @@ const videoFunction = {
             videoVolumeMuted.style.transition = '.8s';
             videoVolume.value = 0;
             videoVolumeValue.innerText = '0';
-        }        
+        }
     },
     fullTime() {
-       videoPlayer.currentTime = videoPlayer.duration * videoFullTime.value / 100;
+        videoPlayer.currentTime = videoPlayer.duration * videoFullTime.value / 100;
     },
     update() {
         videoFullTime.value = videoPlayer.currentTime * (100 / videoPlayer.duration);
         let x = videoFullTime.value;
         let color = `linear-gradient(to right, rgb(255, 0, 0) ${x}%, rgb(34, 34, 34) ${x}%)`;
         videoFullTime.style.background = color;
-        
+
         let curmins = Math.floor(videoPlayer.currentTime / 60);
         let cursec = Math.floor(videoPlayer.currentTime - curmins * 60);
         let durmins = Math.floor(videoPlayer.duration / 60);
@@ -90,7 +90,7 @@ const videoFunction = {
         cursec < 10 ? cursec = '0' + cursec : '';
         durmins < 10 ? durmins = '0' + durmins : '';
         dursec < 10 ? dursec = '0' + dursec : '';
-        
+
         videoCurrentValue.innerHTML = curmins + ':' + cursec + ' / ';
         videoDurationValue.innerHTML = durmins + ':' + dursec;
     },
@@ -105,18 +105,18 @@ const videoFunction = {
         videoFullTime.classList.remove('active');
     },
     showPlayBack() {
-        if(videoPlayBackRate.style.opacity != 1) {
+        if (videoPlayBackRate.style.opacity != 1) {
             videoPlayBackRate.style.opacity = 1;
             videoPlayBackRate.style.visibility = 'visible';
-        }else {
+        } else {
             videoPlayBackRate.style.opacity = 0;
             videoPlayBackRate.style.visibility = 'hidden';
         }
     },
     playPause() {
-        if(videoPlayer.paused) {
+        if (videoPlayer.paused) {
             videoPlayer.play();
-        }else {
+        } else {
             videoPlayer.pause();
         }
     },
@@ -143,33 +143,33 @@ const videoFunction = {
             } else if (videoPlayerBlock.msRequestFullscreen) {
                 videoPlayerBlock.msRequestFullscreen();
             }
-        }else {
+        } else {
             document.querySelector('.videoPlayer .controls .fullScreen i:nth-of-type(2)').style.display = 'none';
             document.querySelector('.videoPlayer .controls .fullScreen i:nth-of-type(1)').style.display = 'block';
             if (document.exitFullscreen) {
                 document.exitFullscreen();
-              } else if (document.webkitExitFullscreen) { 
+            } else if (document.webkitExitFullscreen) {
                 document.webkitExitFullscreen();
-              } else if (document.msExitFullscreen) { 
+            } else if (document.msExitFullscreen) {
                 document.msExitFullscreen();
-              }
+            }
         }
     },
     showPlayList() {
-        if(videoPlayList.style.top != '0%') {
+        if (videoPlayList.style.top != '0%') {
             videoPlayList.style.top = '0%';
             videoPlayListButton.style.transform = 'rotate(-270deg)';
-        }else {
+        } else {
             videoPlayList.style.top = '100%';
             videoPlayListButton.style.transform = 'rotate(0)';
         };
     },
     showThemes() {
-      if(videoThemeFilters.style.left != '0px') {
-          videoThemeFilters.style.left = '0px';
-      }else {
-          videoThemeFilters.style.left = '-80px';
-      };
+        if (videoThemeFilters.style.left != '0px') {
+            videoThemeFilters.style.left = '0px';
+        } else {
+            videoThemeFilters.style.left = '-80px';
+        };
     },
     themes(filter) {
         videoPlayer.style.filter = filter;
@@ -195,7 +195,7 @@ const videoFunction = {
     contextOpacity() {
         videoContextMenu.style.opacity = '0';
     }
-}; 
+};
 
 
 videoPlay.addEventListener('click', videoFunction.play);
@@ -225,9 +225,9 @@ videoPlayerBlock.addEventListener('contextmenu', videoFunction.contextMenu);
 videoPlayerBlock.addEventListener('click', videoFunction.contextOpacity);
 
 
-for(let i = 0; i < videoPlayListItems.length; i++) {
-    videoPlayListItems[i].onclick = function() {
-      videoPlayer.src = videoPlayListVideo[i].src;  
+for (let i = 0; i < videoPlayListItems.length; i++) {
+    videoPlayListItems[i].onclick = function () {
+        videoPlayer.src = videoPlayListVideo[i].src;
         videoPlayer.play();
     };
 }
